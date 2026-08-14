@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import joblib
 
 
 # -----------------------------
@@ -149,7 +150,7 @@ if analyze:
         all_text.append(user_profile)
 
         tfidf_matrix = vectorizer.fit_transform(all_text)
-
+        
         # -----------------------------
         # COSINE SIMILARITY
         # -----------------------------
@@ -161,6 +162,7 @@ if analyze:
             user_vector,
             dataset_vectors
         )[0]
+         
 
         # -----------------------------
         # FIND BEST MATCH
